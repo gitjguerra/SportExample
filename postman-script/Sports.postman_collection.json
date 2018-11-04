@@ -1,0 +1,293 @@
+{
+	"id": "ce6cc76d-5eac-80c2-183a-c5abbec78ae1",
+	"name": "Sports",
+	"description": "",
+	"order": [
+		"2f8330d5-4f91-6c15-46db-ff7d4c88a04c",
+		"fce7d165-afce-6237-4619-4a54bf9c194a",
+		"695f8e17-8693-8486-de5e-fdf799e5fd00",
+		"0e74bc67-40f6-ba6b-4261-c3898791885c",
+		"08924113-c6b5-b560-31da-764474103568",
+		"6c3831bf-2bb5-3b55-af8a-8b6051e9bc9c",
+		"5c9dc41a-938d-60ca-2b05-d84fce457c62",
+		"3f2aaab1-4bf2-5960-3e88-0f2c76fe655d",
+		"3ed56209-cd03-34ab-1afe-3930232d9449"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1541255419797,
+	"owner": "2986849",
+	"public": false,
+	"requests": [
+		{
+			"id": "08924113-c6b5-b560-31da-764474103568",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9000/sports/5",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541305642861,
+			"name": "Get Customers by Id",
+			"description": "",
+			"collectionId": "ce6cc76d-5eac-80c2-183a-c5abbec78ae1",
+			"responses": [],
+			"rawModeData": "{\n    \"username\": \"JPEREZ\",\n    \"password\": \"2\",\n    \"firstName\": \"Jose\",\n    \"lastName\": \"Perez\",\n    \"companyCode\": \"01\",\n    \"description\": \"01\",\n    \"userLanguage\": {\n        \"id\": 1,\n        \"code\": \"01\",\n        \"value\": \"ENGLISH\"\n    },\n    \"companyStartDate\": null,\n    \"companyEndDate\": null,\n    \"email\": \"jose.perez@gmail.com\",\n    \"blockedUser\": false,\n    \"blockedDate\": null,\n    \"activeUser\": false\n}"
+		},
+		{
+			"id": "0e74bc67-40f6-ba6b-4261-c3898791885c",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9000/sports/6",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541300274479,
+			"name": "Delete Customer",
+			"description": "",
+			"collectionId": "ce6cc76d-5eac-80c2-183a-c5abbec78ae1",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
+			"id": "2f8330d5-4f91-6c15-46db-ff7d4c88a04c",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9000/sports",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541300264062,
+			"name": "Get Customers",
+			"description": null,
+			"collectionId": "ce6cc76d-5eac-80c2-183a-c5abbec78ae1",
+			"responses": [],
+			"rawModeData": "{\n    \"username\": \"JPEREZ\",\n    \"password\": \"2\",\n    \"firstName\": \"Jose\",\n    \"lastName\": \"Perez\",\n    \"companyCode\": \"01\",\n    \"description\": \"01\",\n    \"userLanguage\": {\n        \"id\": 1,\n        \"code\": \"01\",\n        \"value\": \"ENGLISH\"\n    },\n    \"companyStartDate\": null,\n    \"companyEndDate\": null,\n    \"email\": \"jose.perez@gmail.com\",\n    \"blockedUser\": false,\n    \"blockedDate\": null,\n    \"activeUser\": false\n}"
+		},
+		{
+			"id": "3ed56209-cd03-34ab-1afe-3930232d9449",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9000/sports/telefono/12345678",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541305878223,
+			"name": "Get Customers by phone",
+			"description": "",
+			"collectionId": "ce6cc76d-5eac-80c2-183a-c5abbec78ae1",
+			"responses": [],
+			"rawModeData": "{\n    \"username\": \"JPEREZ\",\n    \"password\": \"2\",\n    \"firstName\": \"Jose\",\n    \"lastName\": \"Perez\",\n    \"companyCode\": \"01\",\n    \"description\": \"01\",\n    \"userLanguage\": {\n        \"id\": 1,\n        \"code\": \"01\",\n        \"value\": \"ENGLISH\"\n    },\n    \"companyStartDate\": null,\n    \"companyEndDate\": null,\n    \"email\": \"jose.perez@gmail.com\",\n    \"blockedUser\": false,\n    \"blockedDate\": null,\n    \"activeUser\": false\n}"
+		},
+		{
+			"id": "3f2aaab1-4bf2-5960-3e88-0f2c76fe655d",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9000/sports/apellido/suarez",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541305838281,
+			"name": "Get Customers by lastName",
+			"description": "",
+			"collectionId": "ce6cc76d-5eac-80c2-183a-c5abbec78ae1",
+			"responses": [],
+			"rawModeData": "{\n    \"username\": \"JPEREZ\",\n    \"password\": \"2\",\n    \"firstName\": \"Jose\",\n    \"lastName\": \"Perez\",\n    \"companyCode\": \"01\",\n    \"description\": \"01\",\n    \"userLanguage\": {\n        \"id\": 1,\n        \"code\": \"01\",\n        \"value\": \"ENGLISH\"\n    },\n    \"companyStartDate\": null,\n    \"companyEndDate\": null,\n    \"email\": \"jose.perez@gmail.com\",\n    \"blockedUser\": false,\n    \"blockedDate\": null,\n    \"activeUser\": false\n}"
+		},
+		{
+			"id": "5c9dc41a-938d-60ca-2b05-d84fce457c62",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9000/sports/email/jose.gomez@gmail.com",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541305627936,
+			"name": "Get Customers by email",
+			"description": "",
+			"collectionId": "ce6cc76d-5eac-80c2-183a-c5abbec78ae1",
+			"responses": [],
+			"rawModeData": "{\n    \"username\": \"JPEREZ\",\n    \"password\": \"2\",\n    \"firstName\": \"Jose\",\n    \"lastName\": \"Perez\",\n    \"companyCode\": \"01\",\n    \"description\": \"01\",\n    \"userLanguage\": {\n        \"id\": 1,\n        \"code\": \"01\",\n        \"value\": \"ENGLISH\"\n    },\n    \"companyStartDate\": null,\n    \"companyEndDate\": null,\n    \"email\": \"jose.perez@gmail.com\",\n    \"blockedUser\": false,\n    \"blockedDate\": null,\n    \"activeUser\": false\n}"
+		},
+		{
+			"id": "695f8e17-8693-8486-de5e-fdf799e5fd00",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9000/sports",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541300272742,
+			"name": "Post Customer",
+			"description": "",
+			"collectionId": "ce6cc76d-5eac-80c2-183a-c5abbec78ae1",
+			"responses": [],
+			"rawModeData": "{\n    \"id\": \"0\",\n    \"dni\": \"11767678\",\n    \"nombre\": \"Herman\",\n    \"apellido\": \"Suarez\",\n    \"telefono\": \"543487222\",\n    \"email\": \"herman.suarez@gmail.com\"\n}"
+		},
+		{
+			"id": "6c3831bf-2bb5-3b55-af8a-8b6051e9bc9c",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9000/sports/nombre/Jose",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541305637963,
+			"name": "Get Customers by name",
+			"description": "",
+			"collectionId": "ce6cc76d-5eac-80c2-183a-c5abbec78ae1",
+			"responses": [],
+			"rawModeData": "{\n    \"username\": \"JPEREZ\",\n    \"password\": \"2\",\n    \"firstName\": \"Jose\",\n    \"lastName\": \"Perez\",\n    \"companyCode\": \"01\",\n    \"description\": \"01\",\n    \"userLanguage\": {\n        \"id\": 1,\n        \"code\": \"01\",\n        \"value\": \"ENGLISH\"\n    },\n    \"companyStartDate\": null,\n    \"companyEndDate\": null,\n    \"email\": \"jose.perez@gmail.com\",\n    \"blockedUser\": false,\n    \"blockedDate\": null,\n    \"activeUser\": false\n}"
+		},
+		{
+			"id": "fce7d165-afce-6237-4619-4a54bf9c194a",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9000/sports/5",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541300333228,
+			"name": "Put Customer",
+			"description": "",
+			"collectionId": "ce6cc76d-5eac-80c2-183a-c5abbec78ae1",
+			"responses": [],
+			"rawModeData": "{\n    \"dni\": \"762222677\",\n    \"nombre\": \"Herman\",\n    \"apellido\": \"Suarez\",\n    \"telefono\": \"138769578\",\n    \"email\": \"herman.suarez@gmail.com\"\n}"
+		}
+	]
+}

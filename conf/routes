@@ -2,8 +2,15 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-GET     /sports          controllers.SportController.findAll()
-GET     /sports/:id      controllers.SportController.findById(id: Integer)
+GET     /sports          	controllers.SportController.findAll()
+GET     /sports/:id      	controllers.SportController.findById(id: Integer)
+
+GET     /sports/dni/:dni     		controllers.SportController.findByDni(dni: Integer)
+GET     /sports/nombre/:nombre  	controllers.SportController.findByNombre(nombre: String)
+GET     /sports/apellido/:apellido  controllers.SportController.findByApellido(apellido: String)
+GET     /sports/telefono/:telefono  controllers.SportController.findByTelefono(telefono: String)
+GET     /sports/email/:email  		controllers.SportController.findByEmail(email: String)
+
 POST    /sports          controllers.SportController.create()
 PUT     /sports/:id      controllers.SportController.update(id: Integer)
 DELETE  /sports/:id      controllers.SportController.delete(id: Integer)

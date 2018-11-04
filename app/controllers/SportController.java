@@ -24,7 +24,37 @@ public class SportController extends Controller {
             return ok(Json.toJson(sportRepository.findById(id))).as("application/json");
         });
     }
+	
+    public Result findByDni(int dni) {
+        return database.withConnection(conn -> {
+            return ok(Json.toJson(sportRepository.findByDni(dni))).as("application/json");
+        });
+    }
+	
+    public Result findByNombre(String nombre) {
+        return database.withConnection(conn -> {
+            return ok(Json.toJson(sportRepository.findByNombre(nombre))).as("application/json");
+        });
+    }
 
+    public Result findByApellido(String apellido) {
+        return database.withConnection(conn -> {
+            return ok(Json.toJson(sportRepository.findByApellido(apellido))).as("application/json");
+        });
+    }
+
+    public Result findByTelefono(String telefono) {
+        return database.withConnection(conn -> {
+            return ok(Json.toJson(sportRepository.findByTelefono(telefono))).as("application/json");
+        });
+    }
+
+    public Result findByEmail(String email) {
+        return database.withConnection(conn -> {
+            return ok(Json.toJson(sportRepository.findByEmail(email))).as("application/json");
+        });
+    }
+	
     public Result create() {
         return database.withConnection(conn -> {
             Customer sportRequest = Json.fromJson(request().body().asJson(), Customer.class);

@@ -46,24 +46,59 @@ public class SportRepository {
 
         preparedStatement.execute();
 
-        ResultSet rs = preparedStatement.getResultSet();
-
-        if (rs.next()) {
-            Customer customer = new Customer();
-
-            customer.setId(rs.getInt("id"));
-			customer.setDni(rs.getInt("dni"));
-			customer.setNombre(rs.getString("nombre"));
-			customer.setApellido(rs.getString("apellido"));
-			customer.setTelefono(rs.getString("telefono"));
-			customer.setEmail(rs.getString("email"));
-
-            return Optional.of(customer);
-        }
-
-        return Optional.empty();
+		return chargeDTO(preparedStatement);
     }
 
+    public Optional<Customer> findByDni(int dni) throws SQLException {
+        PreparedStatement preparedStatement = database.getConnection().prepareStatement("select * from customers where dni = ?");
+
+        preparedStatement.setInt(1, dni);
+
+        preparedStatement.execute();
+
+		return chargeDTO(preparedStatement);
+    }
+
+    public Optional<Customer> findByNombre(String nombre) throws SQLException {
+        PreparedStatement preparedStatement = database.getConnection().prepareStatement("select * from customers where nombre = ?");
+
+        preparedStatement.setString(1, nombre);
+
+        preparedStatement.execute();
+
+		return chargeDTO(preparedStatement);
+    }
+
+    public Optional<Customer> findByApellido(String apellido) throws SQLException {
+        PreparedStatement preparedStatement = database.getConnection().prepareStatement("select * from customers where apellido = ?");
+
+        preparedStatement.setString(1, apellido);
+
+        preparedStatement.execute();
+
+		return chargeDTO(preparedStatement);
+    }
+
+    public Optional<Customer> findByTelefono(String telefono) throws SQLException {
+        PreparedStatement preparedStatement = database.getConnection().prepareStatement("select * from customers where telefono = ?");
+
+        preparedStatement.setString(1, telefono);
+
+        preparedStatement.execute();
+
+		return chargeDTO(preparedStatement);
+    }
+	
+    public Optional<Customer> findByEmail(String email) throws SQLException {
+        PreparedStatement preparedStatement = database.getConnection().prepareStatement("select * from customers where email = ?");
+
+        preparedStatement.setString(1, email);
+
+        preparedStatement.execute();
+
+		return chargeDTO(preparedStatement);
+    }
+	
     public void delete(int id) throws SQLException {
         PreparedStatement preparedStatement = database.getConnection().prepareStatement("delete from customers where id = ?");
 
@@ -100,4 +135,23 @@ public class SportRepository {
         preparedStatement.executeUpdate();
     }
 
+    private Optional<Customer> chargeDTO(PreparedStatement preparedStatement) throws SQLException {
+
+	    ResultSet rs = preparedStatement.getResultSet();
+
+        if (rs.next()) {
+            Customer customer = new Customer();
+
+            customer.setId(rs.getInt("id"));
+			customer.setDni(rs.getInt("dni"));
+			customer.setNombre(rs.getString("nombre"));
+			customer.setApellido(rs.getString("apellido"));
+			customer.setTelefono(rs.getString("telefono"));
+			customer.setEmail(rs.getString("email"));
+
+            return Optional.of(customer);
+        }
+        return Optional.empty();		
+    }	
+	
 }

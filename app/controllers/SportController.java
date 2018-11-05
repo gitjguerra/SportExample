@@ -10,6 +10,7 @@ import models.*;
 import repositories.*;
 import scala.Option;
 import java.sql.SQLException;
+import java.util.*;
 
 public class SportController extends Controller {
 
@@ -19,8 +20,11 @@ public class SportController extends Controller {
     private Database database;
 
     public Result findAll(Option<String> nombre, Option<String> apellido, Option<Integer> dni, Option<String> telefono, Option<String> email) {
+
+        // Optional values to check
+        final Set<Map.Entry<String,String[]>> entries = request().queryString().entrySet();
         return database.withConnection(conn -> {
-            return ok(Json.toJson(sportRepository.findAll(nombre, apellido, dni, telefono, email))).as("application/json");
+            return ok(Json.toJson(sportRepository.findAll(nombre, apellido, dni, telefono, email, entries))).as("application/json");
         });
     }
 

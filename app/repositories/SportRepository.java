@@ -14,14 +14,35 @@ public class SportRepository {
     @Inject
     Database database;
 
-    public List<Customers> findAll(Option<String> nombre, Option<String> apellido, Option<Integer> dni, Option<String> telefono, Option<String> email) throws SQLException {
+    public List<Customers> findAll(Option<String> nombre, Option<String> apellido, Option<Integer> dni, Option<String> telefono, Option<String> email, Set<Map.Entry<String,String[]>> entries) throws SQLException {
 
         List<Customers> customers = null;
+
         if(nombre.isEmpty() && apellido.isEmpty() && dni.isEmpty() && telefono.isEmpty() && email.isEmpty()){
             customers = Customers.db().find(Customers.class).findList();
         }else{
             // With a little more time it is possible to discriminate the parameters that exist and improve the code
             // and make more complex task query
+            String key = null;
+            String value = null;
+            for (Map.Entry<String,String[]> entry : entries) {
+                key = entry.getKey();
+                value = new String(Arrays.toString(entry.getValue()));
+                value = "%" + value.substring(1,value.length()-1) + "%";
+
+                customers = Customers.find.query().where()
+                        .ilike(key, value)
+                        .orderBy("id asc")
+                        .setFirstRow(0)
+                        .setMaxRows(25)
+                        .findPagedList()
+                        .getList();
+
+                System.out.println(key + " " + value);
+                //break;
+            }
+
+            /*
             customers = Customers.find.query().where()
                     .ilike("nombre", nombre.get())
                     .or()
@@ -37,6 +58,7 @@ public class SportRepository {
                     .setMaxRows(25)
                     .findPagedList()
                     .getList();
+        */
         }
 
         return customers;

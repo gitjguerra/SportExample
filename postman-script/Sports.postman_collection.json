@@ -11,7 +11,9 @@
 		"6c3831bf-2bb5-3b55-af8a-8b6051e9bc9c",
 		"5c9dc41a-938d-60ca-2b05-d84fce457c62",
 		"3f2aaab1-4bf2-5960-3e88-0f2c76fe655d",
-		"3ed56209-cd03-34ab-1afe-3930232d9449"
+		"3ed56209-cd03-34ab-1afe-3930232d9449",
+		"90900420-8da1-7c8d-46a0-67fc28740494",
+		"7f2b9b54-28e5-f6fe-835d-37840d0d208a"
 	],
 	"folders": [],
 	"folders_order": [],
@@ -42,7 +44,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1541305642861,
+			"time": 1541398842304,
 			"name": "Get Customers by Id",
 			"description": "",
 			"collectionId": "ce6cc76d-5eac-80c2-183a-c5abbec78ae1",
@@ -60,7 +62,7 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:9000/sports/6",
+			"url": "http://localhost:9000/sports/14",
 			"folder": null,
 			"queryParams": [],
 			"preRequestScript": null,
@@ -72,7 +74,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1541300274479,
+			"time": 1541398840066,
 			"name": "Delete Customer",
 			"description": "",
 			"collectionId": "ce6cc76d-5eac-80c2-183a-c5abbec78ae1",
@@ -90,7 +92,7 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:9000/sports",
+			"url": "http://localhost:9000/sports/findAll",
 			"folder": null,
 			"queryParams": [],
 			"preRequestScript": null,
@@ -102,7 +104,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1541300264062,
+			"time": 1541398833646,
 			"name": "Get Customers",
 			"description": null,
 			"collectionId": "ce6cc76d-5eac-80c2-183a-c5abbec78ae1",
@@ -132,7 +134,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1541305878223,
+			"time": 1541398855411,
 			"name": "Get Customers by phone",
 			"description": "",
 			"collectionId": "ce6cc76d-5eac-80c2-183a-c5abbec78ae1",
@@ -162,7 +164,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1541305838281,
+			"time": 1541398851062,
 			"name": "Get Customers by lastName",
 			"description": "",
 			"collectionId": "ce6cc76d-5eac-80c2-183a-c5abbec78ae1",
@@ -192,7 +194,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1541305627936,
+			"time": 1541398846950,
 			"name": "Get Customers by email",
 			"description": "",
 			"collectionId": "ce6cc76d-5eac-80c2-183a-c5abbec78ae1",
@@ -222,12 +224,12 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1541300272742,
+			"time": 1541398837978,
 			"name": "Post Customer",
 			"description": "",
 			"collectionId": "ce6cc76d-5eac-80c2-183a-c5abbec78ae1",
 			"responses": [],
-			"rawModeData": "{\n    \"id\": \"0\",\n    \"dni\": \"11767678\",\n    \"nombre\": \"Herman\",\n    \"apellido\": \"Suarez\",\n    \"telefono\": \"543487222\",\n    \"email\": \"herman.suarez@gmail.com\"\n}"
+			"rawModeData": "{\n    \"dni\": \"22765513\",\n    \"nombre\": \"Maria\",\n    \"apellido\": \"Villanueva\",\n    \"telefono\": \"15243765\",\n    \"email\": \"maria.villanueva@gmail.com\"\n}"
 		},
 		{
 			"id": "6c3831bf-2bb5-3b55-af8a-8b6051e9bc9c",
@@ -240,7 +242,7 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:9000/sports/nombre/Jose",
+			"url": "http://localhost:9000/sports/nombre/juan",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -252,8 +254,104 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1541305637963,
+			"time": 1541398844766,
 			"name": "Get Customers by name",
+			"description": "",
+			"collectionId": "ce6cc76d-5eac-80c2-183a-c5abbec78ae1",
+			"responses": [],
+			"rawModeData": "{\n    \"username\": \"JPEREZ\",\n    \"password\": \"2\",\n    \"firstName\": \"Jose\",\n    \"lastName\": \"Perez\",\n    \"companyCode\": \"01\",\n    \"description\": \"01\",\n    \"userLanguage\": {\n        \"id\": 1,\n        \"code\": \"01\",\n        \"value\": \"ENGLISH\"\n    },\n    \"companyStartDate\": null,\n    \"companyEndDate\": null,\n    \"email\": \"jose.perez@gmail.com\",\n    \"blockedUser\": false,\n    \"blockedDate\": null,\n    \"activeUser\": false\n}"
+		},
+		{
+			"id": "7f2b9b54-28e5-f6fe-835d-37840d0d208a",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9000/sports/findAll?nombre=jose&apellido=gomez&dni=11767678&telefono=67342678&email=jose.gomez@gmail.com",
+			"folder": null,
+			"queryParams": [
+				{
+					"key": "nombre",
+					"value": "jose",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "apellido",
+					"value": "gomez",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "dni",
+					"value": "11767678",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "telefono",
+					"value": "67342678",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "jose.gomez@gmail.com",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541398863427,
+			"name": "Get Customers By Optional Values",
+			"description": "",
+			"collectionId": "ce6cc76d-5eac-80c2-183a-c5abbec78ae1",
+			"responses": [],
+			"rawModeData": "{\n    \"username\": \"JPEREZ\",\n    \"password\": \"2\",\n    \"firstName\": \"Jose\",\n    \"lastName\": \"Perez\",\n    \"companyCode\": \"01\",\n    \"description\": \"01\",\n    \"userLanguage\": {\n        \"id\": 1,\n        \"code\": \"01\",\n        \"value\": \"ENGLISH\"\n    },\n    \"companyStartDate\": null,\n    \"companyEndDate\": null,\n    \"email\": \"jose.perez@gmail.com\",\n    \"blockedUser\": false,\n    \"blockedDate\": null,\n    \"activeUser\": false\n}"
+		},
+		{
+			"id": "90900420-8da1-7c8d-46a0-67fc28740494",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9000/sports/dni/762",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541398858743,
+			"name": "Get Customers by dni",
 			"description": "",
 			"collectionId": "ce6cc76d-5eac-80c2-183a-c5abbec78ae1",
 			"responses": [],
@@ -282,12 +380,12 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1541300333228,
+			"time": 1541398835941,
 			"name": "Put Customer",
 			"description": "",
 			"collectionId": "ce6cc76d-5eac-80c2-183a-c5abbec78ae1",
 			"responses": [],
-			"rawModeData": "{\n    \"dni\": \"762222677\",\n    \"nombre\": \"Herman\",\n    \"apellido\": \"Suarez\",\n    \"telefono\": \"138769578\",\n    \"email\": \"herman.suarez@gmail.com\"\n}"
+			"rawModeData": "{\n    \"dni\": 762227777,\n    \"nombre\": \"Herman\",\n    \"apellido\": \"Suarez\",\n    \"telefono\": \"138769578\",\n    \"email\": \"herman.suarez@gmail.com\"\n}"
 		}
 	]
 }

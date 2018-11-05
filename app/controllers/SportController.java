@@ -1,5 +1,6 @@
 package controllers;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.google.inject.Inject;
 import play.db.Database;
 import play.libs.Json;
@@ -7,74 +8,43 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import models.*;
 import repositories.*;
+import scala.Option;
+import java.sql.SQLException;
 
 public class SportController extends Controller {
 
-    @Inject public SportRepository sportRepository;
-    @Inject Database database;
+    @Inject
+    private SportRepository sportRepository;
+    @Inject
+    private Database database;
 
-    public Result findAll() {
+    public Result findAll(Option<String> nombre, Option<String> apellido, Option<Integer> dni, Option<String> telefono, Option<String> email) {
         return database.withConnection(conn -> {
-            return ok(Json.toJson(sportRepository.findAll())).as("application/json");
-        });
-    }
-
-    public Result findById(int id) {
-        return database.withConnection(conn -> {
-            return ok(Json.toJson(sportRepository.findById(id))).as("application/json");
-        });
-    }
-	
-    public Result findByDni(int dni) {
-        return database.withConnection(conn -> {
-            return ok(Json.toJson(sportRepository.findByDni(dni))).as("application/json");
-        });
-    }
-	
-    public Result findByNombre(String nombre) {
-        return database.withConnection(conn -> {
-            return ok(Json.toJson(sportRepository.findByNombre(nombre))).as("application/json");
+            return ok(Json.toJson(sportRepository.findAll(nombre, apellido, dni, telefono, email))).as("application/json");
         });
     }
 
-    public Result findByApellido(String apellido) {
-        return database.withConnection(conn -> {
-            return ok(Json.toJson(sportRepository.findByApellido(apellido))).as("application/json");
-        });
-    }
-
-    public Result findByTelefono(String telefono) {
-        return database.withConnection(conn -> {
-            return ok(Json.toJson(sportRepository.findByTelefono(telefono))).as("application/json");
-        });
-    }
-
-    public Result findByEmail(String email) {
-        return database.withConnection(conn -> {
-            return ok(Json.toJson(sportRepository.findByEmail(email))).as("application/json");
-        });
-    }
-	
     public Result create() {
-        return database.withConnection(conn -> {
-            Customer sportRequest = Json.fromJson(request().body().asJson(), Customer.class);
-
-            sportRepository.add(sportRequest);
-
-            return ok(Json.toJson(sportRequest)).as("application/json");
-        });
+        JsonNode json = request().body().asJson();
+        Customers customers = Json.fromJson(json, Customers.class);
+        if (customers.toString().equals("")){
+            return badRequest("Missing parameter");
+        }
+        customers.save();
+        return ok(Json.toJson(customers)).as("application/json");
     }
 
-    public Result update(int id) {
-        return database.withConnection(conn -> {
-            Customer sportRequest = Json.fromJson(request().body().asJson(), Customer.class);
+    public Result update(int id) throws SQLException {
 
-            sportRequest.setId(id);
-
-            sportRepository.update(sportRequest);
-
-            return ok(Json.toJson(sportRequest)).as("application/json");
-        });
+        Customers customers = Customers.find.byId(id);
+        if (customers == null){
+            return notFound("Customers not found");
+        }else{
+            JsonNode json = request().body().asJson();
+            Customers customersToBe = Json.fromJson(json, Customers.class);
+            sportRepository.update(customers, customersToBe);
+        }
+        return ok(Json.toJson(customers)).as("application/json");
     }
 
     public Result delete(int id) {
@@ -83,4 +53,39 @@ public class SportController extends Controller {
             return ok("{}").as("application/json");
         });
     }
+
+
+    // ********** deprecated methods ************
+    public Result findById(int id) {
+        return database.withConnection(conn -> {
+            return ok(Json.toJson(sportRepository.findById(id))).as("application/json");
+        });
+    }
+    public Result findByDni(int dni) {
+        return database.withConnection(conn -> {
+            return ok(Json.toJson(sportRepository.findByDni(dni))).as("application/json");
+        });
+    }
+    public Result findByNombre(String nombre) {
+        return database.withConnection(conn -> {
+            return ok(Json.toJson(sportRepository.findByNombre(nombre))).as("application/json");
+        });
+    }
+    public Result findByApellido(String apellido) {
+        return database.withConnection(conn -> {
+            return ok(Json.toJson(sportRepository.findByApellido(apellido))).as("application/json");
+        });
+    }
+    public Result findByTelefono(String telefono) {
+        return database.withConnection(conn -> {
+            return ok(Json.toJson(sportRepository.findByTelefono(telefono))).as("application/json");
+        });
+    }
+    public Result findByEmail(String email) {
+        return database.withConnection(conn -> {
+            return ok(Json.toJson(sportRepository.findByEmail(email))).as("application/json");
+        });
+    }
+    // ********** deprecated methods ************
+
 }

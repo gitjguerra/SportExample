@@ -1,5 +1,5 @@
 
-create table customers (
+create table Customers (
   id                    bigint auto_increment not null,
   dni                 	bigint,
   nombre			  	varchar(255),
@@ -11,7 +11,7 @@ create table customers (
 
 SET FOREIGN_KEY_CHECKS=0;
 
-drop table customers;
+drop table Customers;
 
 SET FOREIGN_KEY_CHECKS=1;
 
